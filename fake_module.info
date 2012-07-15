@@ -1,0 +1,3 @@
+core=7.x
+name=Fake Module
+files[]=tests/fake_module.test¬

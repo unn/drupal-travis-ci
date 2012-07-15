@@ -1,0 +1,23 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+
+mysql:
+  database: drupal
+  username: root
+  encoding: utf8
+
+before_script:
+ - mysql -e 'create database drupal;'
+ - pyrus channel-discover pear.drush.org
+ - pyrus install drush/drush
+ - phpenv rehash
+ - drush dl drupal --yes
+ - cd drupal-*
+ - drush site-install standard --db-url=mysql://root:@localhost/drupal --yes
+ - drush cc all --yes
+ - drush runserver --server=builtin 8080 &
+ - sleep 4
+
