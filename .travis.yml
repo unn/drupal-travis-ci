@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 5.3
   - 5.4
 
 mysql:
@@ -21,3 +20,5 @@ before_script:
  - drush runserver --server=builtin 8080 &
  - sleep 4
 
+script: exit 1
+#script: sudo -u [wwwrun|www-data|etc] php ./scripts/run-tests.sh --url http://127.0.0.1:8080) --class BlockTestCase
