@@ -13,11 +13,11 @@ before_script:
  - pyrus channel-discover pear.drush.org
  - pyrus install drush/drush
  - phpenv rehash
- - drush dl drupal --yes
+ - drush dl -y drupal
  - cd drupal-*
  - drush site-install standard --db-url=mysql://root:@localhost/drupal --yes
- - drush en simpletest --yes
- - drush cc all --yes
+ - drush en -y simpletest
+ - drush cc all
  - drush runserver --server=builtin 8080 &
  - sleep 4
 
