@@ -15,10 +15,11 @@ before_script:
  - phpenv rehash
  - drush dl -y drupal
  - cd drupal-*
- - drush site-install standard --db-url=mysql://root:@localhost/drupal --yes
+ - drush si standard --db-url=mysql://root:@localhost/drupal --yes
  - drush en -y simpletest
  - drush cc all
  - drush runserver --server=builtin 8080 &
  - sleep 4
+ - drush vset -y simpletest_verbose FALSE
 
 script: drush test-run --uri=http://127.0.0.1:8080 Tracker
