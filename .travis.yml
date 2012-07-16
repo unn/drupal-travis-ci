@@ -13,13 +13,13 @@ before_script:
  - pyrus channel-discover pear.drush.org
  - pyrus install drush/drush
  - phpenv rehash
- - drush dl -y drupal
+ - drush dl --yes drupal
  - cd drupal-*
  - drush si standard --db-url=mysql://root:@localhost/drupal --yes
- - drush en -y simpletest
+ - drush en --yes simpletest
  - drush cc all
  - drush runserver --server=builtin 8080 &
  - sleep 4
- - drush vset -y simpletest_verbose FALSE
+ - drush vset --yes simpletest_verbose FALSE
 
 script: /home/vagrant/.phpenv/shims/php ./scripts/run-tests.sh --url http://127.0.0.1:8080 Tracker
