@@ -20,6 +20,6 @@ before_script:
  - drush cc all
  - drush runserver --server=builtin 8080 &
  - sleep 4
- - drush vset -y simpletest_verbose FALSE
+ - which php
 
 script: php ./scripts/run-tests.sh --url http://127.0.0.1:8080 Tracker
