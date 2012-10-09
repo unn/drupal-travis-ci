@@ -22,4 +22,4 @@ before_script:
  - sleep 4
  - drush vset --yes simpletest_verbose FALSE
 
-script: php ./scripts/run-tests.sh --php /home/vagrant/.phpenv/shims/php --url http://127.0.0.1:8080 Tracker
+script: drush test-run --xml --uri=http://127.0.0.1:8080 Tracker
