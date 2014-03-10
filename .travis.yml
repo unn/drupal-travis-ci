@@ -1,7 +1,6 @@
 language: php
 php:
   - 5.4
-  - hhvm
 
 mysql:
   database: drupal
@@ -9,7 +8,6 @@ mysql:
   encoding: utf8
 
 before_script:
- - mysql -e 'create database drupal;'
  - pyrus channel-discover pear.drush.org
  - pyrus install drush/drush
  - phpenv rehash
