@@ -9,6 +9,7 @@ mysql:
   encoding: utf8
 
 before_script:
+ - echo ${TRAVIS_REPO_SLUG}
  - pyrus channel-discover pear.drush.org
  - pyrus install drush/drush
  - phpenv rehash
